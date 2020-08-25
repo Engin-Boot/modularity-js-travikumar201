@@ -14,17 +14,17 @@ const MinorColors = [
     "slate"
 ];
 
-function GetColorFromPairNumber(pairNumber) {
+exports.getColorFromPairNumber = function GetColorFromPairNumber(pairNumber) {
     let colorPair = {};
     const zeroBasedPairNumber = pairNumber - 1;
     const majorColorIndex =
         Math.floor(zeroBasedPairNumber / MinorColors.length);
     colorPair.major = MajorColors[majorColorIndex];
     colorPair.minor = MinorColors[zeroBasedPairNumber % MinorColors.length];
-    return colorPair
+    return colorPair;
 }
 
-function GetPairNumberFromColors(majorColor, minorColor) {
+exports.getPairNumberFromColors = function GetPairNumberFromColors(majorColor, minorColor) {
     let majorIndex = 0;
     let minorIndex = 0;
     for(majorIndex = 0; majorIndex < MajorColors.length; majorIndex++) {
@@ -39,6 +39,3 @@ function GetPairNumberFromColors(majorColor, minorColor) {
     }
     return majorIndex * MinorColors.length + minorIndex + 1;
 }
-
-module.exports = GetColorFromPairNumber;
-module.exports = GetPairNumberFromColors;

@@ -1,16 +1,15 @@
 const expect = require('chai').expect;
-var GetColorFromPairNumberRef = require("./color-operations.js");
-var GetPairNumberFromColorsRef = require("./color-operations.js");
+var colorOpeartionsRef = require("./color-operations.js");
 
 function testNumberToPair(number, expectedMajor, expectedMinor) {
-    const pairOfColors = GetColorFromPairNumberRef(number);
+    const pairOfColors = colorOpeartionsRef.getColorFromPairNumber(number);
     console.log(`${number} = ${expectedMajor} ${expectedMinor}`);
     expect(pairOfColors.major).equals(expectedMajor);
     expect(pairOfColors.minor).equals(expectedMinor);
 }
 
 function testColorToNumber(majorColor, minorColor, expectedNumber) {
-    const pairNumber = GetPairNumberFromColorsRef(majorColor, minorColor);
+    const pairNumber = colorOpeartionsRef.getPairNumberFromColors(majorColor, minorColor);
     console.log(`${majorColor} ${minorColor} = ${pairNumber}`);
     expect(pairNumber).to.equal(expectedNumber);
 }
