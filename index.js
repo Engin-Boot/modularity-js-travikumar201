@@ -1,5 +1,6 @@
 const expect = require('chai').expect;
 var colorOpeartionsRef = require("./color-operations.js");
+var colorCodeManualRef = require("./color-code-guide.js");
 
 function testNumberToPair(number, expectedMajor, expectedMinor) {
     const pairOfColors = colorOpeartionsRef.getColorFromPairNumber(number);
@@ -14,7 +15,15 @@ function testColorToNumber(majorColor, minorColor, expectedNumber) {
     expect(pairNumber).to.equal(expectedNumber);
 }
 
+function printColorCode() {
+    const colorMap = colorCodeManualRef.colorCodeManual();
+    for (let [key, value] of colorMap.entries()) {
+        console.log(`${key} --> ${value}`);
+    }
+}
+
 console.log("color coder");
+printColorCode();
 testNumberToPair(4, "white", "brown");
 testNumberToPair(25, "violet", "slate");
 testColorToNumber("black", "brown", 14);
