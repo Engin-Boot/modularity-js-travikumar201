@@ -14,7 +14,7 @@ const MinorColors = [
     "slate"
 ];
 
-exports.colorCodeManual = function GetColorCodeManual(){
+exports.getColorCodeManual = function GetColorCodeManual(){
     let colorMap = new Map();
     let majorIndex = 0;
     let minorIndex = 0;
