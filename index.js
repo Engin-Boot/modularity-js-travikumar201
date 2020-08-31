@@ -16,10 +16,8 @@ function testColorToNumber(majorColor, minorColor, expectedNumber) {
 }
 
 function printColorCode() {
-    const colorMap = colorCodeManualRef.getColorCodeManual();
-    for (let [key, value] of colorMap.entries()) {
-        console.log(`${key} --> ${value}`);
-    }
+    const colorMap = colorCodeManualRef.toString();
+    console.log(colorMap);
 }
 
 console.log("color coder");
